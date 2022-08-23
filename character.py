@@ -1,7 +1,7 @@
 from statushero import status
 from classeperson import ClasseHero
 class Char(status):
-    def __init__(self,nick,bk,sm,me,mg):
+    def __init__(self,nick,bk ='Blade Knigth',sm = 'Soul Master',me ='Muse Elf',mg ='Magic Gladiator'):
         status.__init__(self)
         self.Classe_Hero = ClasseHero(bk,sm,me,mg)
         self.id = 'stun106'
@@ -38,8 +38,6 @@ class Char(status):
     def addInventario(self,a:str,b:int)->dict:
         self.__inventario[a] = b
         return self.__inventario
-
-nick = input('digite seu nick: ')
 
 
 

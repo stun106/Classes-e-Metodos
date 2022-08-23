@@ -21,15 +21,15 @@ class status():
         self.SM['ene'] = 10
         return self.SM
     def statusMuse(self):
-        self.ME = 3
-        self.ME = 10
-        self.ME = 2
-        self.ME = 5
+        self.ME['str'] = 3
+        self.ME['agi'] = 10
+        self.ME['vit'] = 2
+        self.ME['ene'] = 5
         return self.ME
 
     def statusMG(self):
-        self.MG = 8
-        self.MG = 2
-        self.MG = 2
-        self.MG = 8
+        self.MG['str'] = 8
+        self.MG['agi'] = 2
+        self.MG['vit'] = 2
+        self.MG['ene'] = 8
         return self.MG
