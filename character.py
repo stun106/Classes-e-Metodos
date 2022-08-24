@@ -1,9 +1,5 @@
-from statushero import status
-from classeperson import ClasseHero
-class Char(status):
-    def __init__(self,nick,bk ='Blade Knigth',sm = 'Soul Master',me ='Muse Elf',mg ='Magic Gladiator'):
-        status.__init__(self)
-        self.Classe_Hero = ClasseHero(bk,sm,me,mg)
+class Char():
+    def __init__(self,nick):
         self.id = 'stun106'
         self.nickname = nick
         self.__exp = 0

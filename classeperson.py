@@ -1,7 +1,55 @@
 class ClasseHero:
-    def __init__(self, bk ='Blade Knigth',sm = 'Soul Master',me ='Muse Elf',mg ='Magic Gladiator'):
-        self.Blade_Knigth = bk
-        self.Soul_Master = sm
-        self.Muse_Elf = me
-        self.Magic_Gladiator = mg
+    def __init__(self):
+        self.__Blade_Knigth = {}
+        self.__Soul_Master = {}
+        self.__Muse_Elf = {}
+        self.__Magic_Gladiator = {}
+                                        
+    #falta simplificar esses metodos em um só usando condições.
+                
+    @property                               
+    def HeroBK(self):
+        return self.__Blade_Knigth
+    
+    @HeroBK.setter
+    def HeroBK(self, a,b= 1 ):
+        if a == b:
+            self.__Blade_Knigth
+
+    @property
+    def HeroSM(self):
+        return self.__Soul_Master
+
+    @HeroSM.setter
+    def HeroSM(self,a,b = 2):
+        if a == b:
+            return self.__Soul_Master
+
+    @property
+    def HeroME(self):
+        return self.__Muse_Elf
+
+    @HeroME.setter
+    def HeroMe(self,a,b = 3):
+        if a == b:
+            return self.__Muse_Elf
+
+    @property
+    def HeroMG(self):
+        return self.__Magic_Gladiator
+    
+    @HeroMG.setter
+    def HeroMG(self,a,b = 4):
+        if a == b:
+            return self.__Magic_Gladiator
+
+
+    
+        
+             
+
+
+
+
+    
         
