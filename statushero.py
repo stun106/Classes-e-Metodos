@@ -7,8 +7,9 @@ class status(ClasseHero):
         self.Vitalidade = 0
         self. Energia = 0
 
+    #Métodos para atribuir status ao Heroi
         
-    def BkStatus(self): #<- Função que atribui status no heroi BladeKnigth na classe herdada , e predertemina cada status individualmente na classe"status"
+    def BkStatus(self): 
         self.Forca += 10
         self.Blade_Knigth['Str'] = 10 
         self.Agilidade += 5

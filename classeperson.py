@@ -5,8 +5,8 @@ class ClasseHero:
         self.__Muse_Elf = {}
         self.__Magic_Gladiator = {}
                                         
-    #falta simplificar esses metodos em um só usando condições.
-                
+    #Métodos para seleção de personagens
+
     @property                               
     def HeroBK(self):
         return self.__Blade_Knigth
