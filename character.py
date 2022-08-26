@@ -1,9 +1,9 @@
 class Char():
     def __init__(self,nick):
-        self.id = 'stun106'
         self.nickname = nick
         self.nivel = 1
         self. __inventario = {}
+    
 
     @property
     def inventario(self)->dict:

@@ -3,8 +3,10 @@ from character import Char
 from statushero import status
 from mob import Monster
 class Syscombat(Char,status,Monster):
-    def __init__(self):
-        self.Mob = Monster()
+    def __init__(self,nick):
+        Char.__init__(self,nick)
+        status.__init__(self)
+        Monster.__init__(self)
         self.__RollDice = 0
         self.__Damage = 0
         self.__Defesa = 0
@@ -57,6 +59,7 @@ class Syscombat(Char,status,Monster):
 
     def PvM(self,a, b = 'ataque'):
         if a == b:
+            self.rolldice()
             while True:
                 if self.__RollDice <= 4: 
                     self.HPmonster -= (self.__Damage - self.DefMonster)
@@ -75,11 +78,6 @@ class Syscombat(Char,status,Monster):
                     return self.__Hp
 
 
-                    
-
-    
 
 
-        
-    
     
