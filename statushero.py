@@ -1,6 +1,6 @@
-from classeperson import ClasseHero
-class status(ClasseHero):
-    def __init__(self):
+
+class status():
+
         ClasseHero.__init__(self)
         self.Forca = 0
         self.Agilidade = 0
@@ -9,47 +9,10 @@ class status(ClasseHero):
 
     #Métodos para atribuir status ao Heroi
         
-    def BkStatus(self): 
-        self.Forca += 10
-        self.Blade_Knigth['Str'] = 10 
-        self.Agilidade += 5
-        self.Blade_Knigth['Agi'] = 5
-        self.Vitalidade += 3
-        self.Blade_Knigth['Vit'] = 3
-        self.Energia += 2
-        self.Blade_Knigth['Ene'] = 2
-        return self.Blade_Knigth
 
-    def SmStatus(self):
-        self.Forca += 3
-        self.Soul_Master['Str'] = 3
-        self.Agilidade += 4
-        self.Soul_Master['Agi'] = 4
-        self.Vitalidade += 3
-        self.Soul_Master['Vit'] = 3
-        self.Energia += 10
-        self.Soul_Master['Ene'] = 10
-        return self.Soul_Master
 
-    def MeStatus(self):
-        self.Forca += 3
-        self.Muse_Elf['Str'] = 3
-        self.Agilidade += 10
-        self.Muse_Elf['Agi'] = 10
-        self.Vitalidade += 2
-        self.Muse_Elf['Vit'] = 2
-        self.Energia += 5
-        self.Muse_Elf['Ene'] = 5
-        return self.Muse_Elf
+    
+  
 
-    def MgStatus(self):
-        self.Forca += 8
-        self.Magic_Gladiator['Str'] = 8
-        self.Agilidade += 2
-        self.Magic_Gladiator['Agi'] = 2
-        self.Vitalidade += 2
-        self.Magic_Gladiator['Vit'] = 2
-        self.Energia += 8
-        self.Magic_Gladiator['Ene'] = 8
-        return self.Magic_Gladiator
+
 

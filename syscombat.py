@@ -1,11 +1,12 @@
+from sys import exit
 from random import randint
 from character import Char
-from statushero import status
+from classeperson import ClasseHero
 from mob import Monster
-class Syscombat(Char,status,Monster):
+class Syscombat(Char,ClasseHero,Monster):
     def __init__(self,nick):
         Char.__init__(self,nick)
-        status.__init__(self)
+        ClasseHero.__init__(self)
         Monster.__init__(self)
         self.__RollDice = 0
         self.__Damage = 0
@@ -17,8 +18,8 @@ class Syscombat(Char,status,Monster):
         return self.__RollDice
     
     @rolldice.setter
-    def rolldice(self,a,r):
-        if a == 'y':
+    def rolldice(self,a,b='y'):
+        if a != b:
             r = 'siga as instruções para completar a ação!'
             return r
         else:
@@ -30,11 +31,9 @@ class Syscombat(Char,status,Monster):
         return self.__Hp
 
     @health.setter
-    def health(self,a='You Died!'):
-        if self.__HP <= 0:
-            return a
-        else: 
-            self.__HP += self.Forca * self.Vitalidade
+    def health(self,a,b= 1):
+        if a == b:
+            self.__Hp += self.Forca*self.Vitalidade
             return self.__Hp
     
     @property
@@ -42,9 +41,9 @@ class Syscombat(Char,status,Monster):
         return self.__Damage
     
     @damage.setter
-    def damage(self):
-        if self.__Damage > 1:
-            self.__Damage += (self.Forca + self.Agilidade) / self.Energia
+    def damage(self,a,b = 1):
+        if a == b:
+            self.__Damage += (self.Forca + self.Agilidade) * self.Energia
             return self.__Damage
     
     @property
@@ -52,32 +51,27 @@ class Syscombat(Char,status,Monster):
         return self.__Defesa
     
     @defesa.setter
-    def defesa(self):
-        if self.__Defesa > 1:
+    def defesa(self,a,b = 1):
+        if a == b:
             self.__Defesa += self.Forca / self.Agilidade
             return self.__Defesa
 
-    def PvM(self,a, b = 'ataque'):
-        if a == b:
-            self.rolldice()
-            while True:
-                if self.__RollDice <= 4: 
-                    self.HPmonster -= (self.__Damage - self.DefMonster)
-                    return self.HPmonster
-                elif self.__Hp == 0:
-                    r = 'Your Died'
-                    return r
-                elif self.HPmonster == 0:
-                    self.nivel += 1
-                    r = (f'{self.SkeletonWarrior} Died, ooooooohhh Level Up! Nivel:{self.nivel}')
-                    self.__inventario['ouro'] = 500
-                    o = '500 ouro adquirido'
-                    return (r,o)
-                else: 
-                    self.__Hp -= (self.Mob.DmgMonster - self.__Defesa)
-                    return self.__Hp
+
+    def Ataque(self):
+        self.HPmonster -= (self.__Damage - self.DefMonster)
+        return (f'{self.nickname} bravamente consegue acerta-lo!\nDano Sofrido:{self.damage}\n{self.SkeletonWarrior}_Hp: {self.HPmonster}')
+    def ataqueMob(self):
+        self.__Hp -= (self.DmgMonster - self.__Defesa)
+        return (f'{self.nickname} falhou em ataca-lo e foi supreendido com um ataque!\nDano Sofrido:{self.DmgMonster}\n{self.nickname}_Hp: {round(self.__Hp)}')
+    def Died(self):
+        return exit('Your Died')
+
+    def Killmonster(self):
+        self.nivel += 1
+        return exit(f'{self.SkeletonWarrior} Died, ooooooohhh Level Up! Nivel:{self.nivel}')
 
 
-
+        
+        
 
     
